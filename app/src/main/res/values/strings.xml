@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">Fintive_new</string>
+    <string name="app_name">Fintive</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="projInc">Projected Income</string>
+    <string name="current">Current Earnings</string>
+    <string name="incomeName">Name</string>
+    <string name="incomeAmount">Amount</string>
+    <string name="date">Expected Date</string>
+    <string name="clear">CLEAR</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="often">Frequency</string>
+    <string-array name="frequency">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Year</item>
+    </string-array>
+    <string name="title_activity_addexpense">addexpense</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome">Welcome, Akith</string>
+    <string name="balance">Rs.50,000.00</string>
+    <string name="textBalance">Total Balance</string>
+    <string name="currBalance">Available Balance</string>
+    <string name="amountBalance">Rs.35,000.00</string>
+    <string name="upcomming">Upcomming Expenses</string>
+    <string name="utilites">Utilities</string>
+    <string name="amountUtilities">Rs.5000.00</string>
+    <string name="utilDate">17/03/22</string>
+    <string name="recentTrans">Recent Transactions</string>
+    <string name="expectedIncome">Expected Income</string>
+    <string name="expectedIncVal">RS.65,000.00</string>
+    <string name="currInc">Current Income</string>
+    <string name="currIncValue">Rs.45,000.00</string>
+    <string name="addBtnText">+ ADD</string>
+    <string name="textNonReccur">Non-Recurring</string>
+    <string name="textReccuring">Recurring</string>
 </resources>
