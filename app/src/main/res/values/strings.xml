@@ -40,4 +40,23 @@
     <string name="addBtnText">+ ADD</string>
     <string name="textNonReccur">Non-Recurring</string>
     <string name="textReccuring">Recurring</string>
+
+
+    <string name="income">Income</string>
+    <string name="ExpencesBtn">Expences</string>
+    <string name="goalsButton">Goals</string>
+    <string name="selectItem">Select Item</string>
+    <string name="goalHeading">Goals</string>
+    <string name="add_btn">+ Add</string>
+    <string name="sampleGoal">Goal</string>
+    <string name="sampleGoaldesc">sample sample sample sample sample</string>
+    <string name="GoalName">Goal Name</string>
+    <string name="EnterGoalHint">Enter Goal Name</string>
+    <string name="TextDescription">Description</string>
+    <string name="remindme">"Remind Me in Every "</string>
+    <string name="days">days</string>
+    <string name="enterDesc">Enter Description</string>
+    <string name="cancelbtn">Cancel</string>
+    <string name="goalName">Goal Name</string>
+
 </resources>
