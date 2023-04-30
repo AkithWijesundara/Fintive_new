@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card2" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listVeiw"
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class income : Fragment(R.layout.fragment_income) {
 
-    private lateinit var adapter: incomeAdapter
+    private lateinit var adapterInc: incomeAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var incomeArrayList: ArrayList<incomeData>
 
@@ -35,11 +35,11 @@ class income : Fragment(R.layout.fragment_income) {
         super.onViewCreated(view, savedInstanceState)
         dataInitialize()
         val layoutManager= LinearLayoutManager(context)
-        recyclerView=view.findViewById(R.id.recyle)
+        recyclerView=view.findViewById(R.id.recycle)
         recyclerView.layoutManager=layoutManager
         recyclerView.hasFixedSize()
-        adapter=incomeAdapter(incomeArrayList)
-        recyclerView.adapter=adapter
+        adapterInc=incomeAdapter(incomeArrayList)
+        recyclerView.adapter=adapterInc
 
             val addinc=view.findViewById<Button>(R.id.button)
 
