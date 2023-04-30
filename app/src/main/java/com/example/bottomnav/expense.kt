@@ -11,7 +11,7 @@ import kotlin.math.cos
 
 class expense : Fragment(R.layout.fragment_expense) {
 
-    private lateinit var adapter: expenseAdapter
+    private lateinit var adapterExp: expenseAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var expenseArrayList: ArrayList<expenseData>
 
@@ -31,11 +31,11 @@ class expense : Fragment(R.layout.fragment_expense) {
         super.onViewCreated(view, savedInstanceState)
         dataInitialize()
         val layoutManager=LinearLayoutManager(context)
-        recyclerView=view.findViewById(R.id.listVeiw)
+        recyclerView=view.findViewById(R.id.listView)
         recyclerView.layoutManager=layoutManager
         recyclerView.hasFixedSize()
-        adapter=expenseAdapter(expenseArrayList)
-        recyclerView.adapter=adapter
+        adapterExp=expenseAdapter(expenseArrayList)
+        recyclerView.adapter=adapterExp
 
     }
 
