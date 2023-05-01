@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import com.example.bottomnav.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         replaceFragment(home())
 
+        val firebase:DatabaseReference=FirebaseDatabase.getInstance().getReference()
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
