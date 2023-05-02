@@ -59,4 +59,29 @@
     <string name="cancelbtn">Cancel</string>
     <string name="goalName">Goal Name</string>
 
+
+    <string name="Acc_heading">ACCOUNTS</string>
+    <string name="Acc_card1">Cash</string>
+    <string name="Acc_card1_amount">100000.00</string>
+    <string name="Acc_card2">Card</string>
+    <string name="Acc_card2_amount">200000.00</string>
+    <string name="Add_btn">+ ADD</string>
+    <string name="Add_account_heading">ADD ACCOUNT</string>
+    <string name="Add_account_field1">Account Name</string>
+    <string name="Add_account_field2">Initial Account Balance</string>
+    <string name="Add_account_field3">Initial Balance Date</string>
+    <string name="Add_account_field4">Account Type</string>
+    <string name="Edit_account_heading">EDIT ACCOUNT</string>
+    <string name="edit_acc_field1">Account Name</string>
+    <string name="edit_acc_field2">Initial Account Balance</string>
+    <string name="edit_acc_field3">Initial Balance Date</string>
+    <string name="edit_acc_field4">Account Type</string>
+    <string name="edit_acc_btn">✎ EDIT</string>
+    <string name="transfer_heading">TRANSFER</string>
+    <string name="transfer_field1">Amount</string>
+    <string name="transfer_field2">✎ Note</string>
+    <string name="transfer_field3">Cash</string>
+    <string name="transfer_field4">Card</string>
+    <string name="transfer_btn">《 》 TRANSFER</string>
+
 </resources>
