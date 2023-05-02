@@ -14,5 +14,9 @@
     <dimen name="btnTextSize">14sp</dimen>
     <dimen name="defaultMargin">15dp</dimen>
     <dimen name="defaultPadding">5dp</dimen>
+
+    <dimen name="headings">34dp</dimen>
+    <dimen name="fields">18dp</dimen>
+    <dimen name="buttons">14dp</dimen>
     
 </resources>
