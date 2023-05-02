@@ -1,3 +1,9 @@
 package com.example.bottomnav
 
-data class incomeData(var name:String,var dueDate: String,var amount: String)
+data class IncomeData (var incId:String? = "",
+                      var incName:String? = "",
+                      var incDate: String? = "",
+                      var incAmount: Long? = 0,
+                      var incReccuring: String? = "",
+                      var incFrequancy: String? = ""
+                      )
