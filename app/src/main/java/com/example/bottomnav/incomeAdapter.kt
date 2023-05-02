@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class incomeAdapter (private val arrayList: ArrayList<incomeData>): RecyclerView.Adapter<incomeAdapter.MyViewHolder>(){
+class incomeAdapter (private val arrayList: ArrayList<IncomeData>): RecyclerView.Adapter<incomeAdapter.MyViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): incomeAdapter.MyViewHolder {
@@ -17,9 +17,9 @@ class incomeAdapter (private val arrayList: ArrayList<incomeData>): RecyclerView
 
     override fun onBindViewHolder(holder: incomeAdapter.MyViewHolder, position: Int) {
         val currentItem=arrayList[position]
-        holder.eName.text=currentItem.name
-        holder.date.text=currentItem.dueDate
-        holder.cost.text=currentItem.amount
+        holder.eName.text=currentItem.incName
+        holder.date.text=currentItem.incDate
+        holder.cost.text=currentItem.incAmount.toString()
 
     }
 
