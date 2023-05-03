@@ -2,18 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/goalLayoutFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/goalLayoutFragment"
     tools:context=".HashGoalFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card1"
-        android:layout_width="411dp"
-        android:layout_height="96dp"
+        android:layout_width="408dp"
+        android:layout_height="85dp"
         android:background="@drawable/top_box"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,7 +24,6 @@
             android:id="@+id/goalHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:fontFamily="sans-serif"
             android:text="@string/goalHeading"
             android:textColor="@color/white"
@@ -36,74 +37,25 @@
         android:id="@+id/add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card1" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/general"
-        android:backgroundTint="@color/white"
-        android:textAlignment="center"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/goalRecyclerView"
+        android:layout_width="405dp"
+        android:layout_height="382dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_btn"
-        app:layout_constraintVertical_bias="0.12">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/expItem"
-            android:layout_width="396dp"
-            android:layout_height="92dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/add_btn"
-            app:layout_constraintVertical_bias="0.109">
-
-            <TextView
-                android:id="@+id/expName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/goalName"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.97"
-                app:layout_constraintStart_toEndOf="@+id/expName"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/deletebin" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="381dp"
-                android:layout_height="51dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/expName" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
+        tools:listitem="@layout/goals" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,5 +58,6 @@
     <string name="enterDesc">Enter Description</string>
     <string name="cancelbtn">Cancel</string>
     <string name="goalName">Goal Name</string>
+    <string name="UPDATE" />
 
 </resources>
