@@ -28,8 +28,12 @@ class AddGoal : AppCompatActivity() {
         var returnGoals = findViewById<ImageView>(R.id.back_btn)
         //Back to Goals Fragment
         returnGoals.setOnClickListener {
-            val intent = Intent(this, HashGoalFragment::class.java)
-            startActivity(intent)
+            /*val fragment = HashGoalFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.viewPagerHash, fragment)
+                .addToBackStack(null)
+                .commit()*/
+            onBackPressed()
         }
 
 
@@ -60,6 +64,7 @@ class AddGoal : AppCompatActivity() {
 
                 etGoalName.text.clear()
                 etGoalDescription.text.clear()
+                onBackPressed()
 
             }.addOnFailureListener{ err->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()

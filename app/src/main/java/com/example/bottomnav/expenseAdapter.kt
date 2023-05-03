@@ -1,14 +1,10 @@
 package com.example.bottomnav
 
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class expenseAdapter(private val arrayList: ArrayList<expenseData>):RecyclerView.Adapter<expenseAdapter.MyViewHolder>(){
 
@@ -31,7 +27,7 @@ class expenseAdapter(private val arrayList: ArrayList<expenseData>):RecyclerView
     }
 
     class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val eName:TextView=itemView.findViewById(R.id.expName)
+        val eName:TextView=itemView.findViewById(R.id.retGoalName)
         val date:TextView=itemView.findViewById(R.id.tvdate)
         val cost:TextView=itemView.findViewById(R.id.tvAmount)
     }
