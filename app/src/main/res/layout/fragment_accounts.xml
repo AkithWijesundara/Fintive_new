@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/accounts_container"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/analytics"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".accounts">
+    tools:context=".Accounts">
 
     <ScrollView
         android:layout_width="414dp"
@@ -100,124 +100,36 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewaddAcc">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView8"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:paddingStart="20dp"
-                                    android:paddingTop="3dp"
-                                    android:text="@string/Acc_card1"
-                                    android:textColor="#323232"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:id="@+id/textView10"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:layout_weight="1"
-                                    android:paddingStart="20dp"
-                                    android:text="@string/Acc_card1_amount" />
-                            </LinearLayout>
-
-                            <ImageView
-                                android:id="@+id/imageView8"
-                                android:layout_width="89dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="0.001"
-                                android:src="@drawable/cash" />
-                        </LinearLayout>
-
-                        <View
-                            android:id="@+id/divider"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="10dp"
-                            android:background="?android:attr/listDivider" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView9"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:paddingStart="20dp"
-                                    android:paddingTop="3dp"
-                                    android:text="@string/Acc_card2"
-                                    android:textColor="#323232"
-                                    android:textSize="24sp" />
-
-                                <TextView
-                                    android:id="@+id/textView11"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_weight="1"
-                                    android:text="@string/Acc_card2_amount" />
-                            </LinearLayout>
-
-                            <ImageView
-                                android:id="@+id/imageView9"
-                                android:layout_width="89dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="0.001"
-                                android:src="@drawable/card_img" />
-                        </LinearLayout>
-
-                        <View
-                            android:id="@+id/divider2"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="10dp"
-                            android:background="?android:attr/listDivider" />
-
                         <Button
                             android:id="@+id/button5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="130dp"
+                            android:layout_marginEnd="20dp"
                             android:text="@string/add_btn"
                             tools:text="@string/Add_btn" />
 
+                        <Button
+                            android:id="@+id/fetchbtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="View Accounts" />
+
+                        <Button
+                            android:id="@+id/TransferBetAccBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="《 》 Transfer" />
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="《 》 Transfer" />
 
         </LinearLayout>
     </ScrollView>
