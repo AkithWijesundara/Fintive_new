@@ -14,7 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/expItem"
-        android:layout_width="396dp"
+        android:layout_width="398dp"
         android:layout_height="92dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp">
@@ -36,7 +36,6 @@
             android:id="@+id/retGoalDescription"
             android:layout_width="381dp"
             android:layout_height="51dp"
-            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

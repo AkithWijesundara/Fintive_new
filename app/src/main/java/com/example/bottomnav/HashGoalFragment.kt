@@ -48,13 +48,11 @@ class HashGoalFragment : Fragment() {
 
         getGoalData()
 
-
-
-
         return ret
     }
 
 
+    //Retrieve Goals Data From Database
     private fun getGoalData(){
         goalRecyclerView.visibility = View.GONE
 

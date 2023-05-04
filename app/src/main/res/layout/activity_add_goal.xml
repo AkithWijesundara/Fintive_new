@@ -13,7 +13,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="352dp"
-        android:background="@color/design_default_color_primary_dark"
+        android:background="@color/btnColor"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
         android:paddingRight="5dp"
@@ -105,17 +105,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
+
         <Button
             android:id="@+id/etGoalConfirmBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"
             android:layout_marginTop="450dp"
-            android:background="@color/white"
+            android:backgroundTint="@color/btnColor"
             android:text="@string/confirm"
-            android:textSize="@dimen/btnTextSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+            android:textSize="@dimen/btnTextSize" />
 
     </androidx.cardview.widget.CardView>
 
