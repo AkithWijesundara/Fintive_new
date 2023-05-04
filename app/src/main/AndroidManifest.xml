@@ -12,6 +12,15 @@
         android:theme="@style/Theme.BottomNav"
         tools:targetApi="31">
         <activity
+            android:name=".income_update"
+            android:exported="false" />
+        <activity
+            android:name=".Income_View"
+            android:exported="false" />
+        <activity
+            android:name=".addGoal"
+            android:exported="false" />
+      <activity
             android:name=".GoalDetailsActivity"
             android:exported="false" />
         <activity
