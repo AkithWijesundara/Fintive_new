@@ -1,7 +1,6 @@
 package com.example.bottomnav
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
@@ -31,7 +30,7 @@ class addIncome : AppCompatActivity() {
         etIncomeAmount=findViewById(R.id.incAmountValue)
         etIncomeDate=findViewById(R.id.incDateValue)
         etIncomeReccuring=findViewById(R.id.recurring)
-        etIncomeFrequancy=findViewById(R.id.spinner)
+        etIncomeFrequancy=findViewById(R.id.senderSpinner)
         btnSaveData=findViewById(R.id.confirm)
 
         //Initializing
