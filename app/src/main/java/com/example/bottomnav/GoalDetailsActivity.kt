@@ -14,19 +14,24 @@ import com.google.firebase.ktx.Firebase
 
 class GoalDetailsActivity : AppCompatActivity() {
 
+    //Declare variables
+
     //private lateinit var goalId: TextView
     private lateinit var goalName: TextView
     private lateinit var goalDescription: TextView
     private lateinit var btnUpdateGoal: Button
     private lateinit var btnDeleteGoal: Button
 
-
+    //override onCreate methode
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_goal_details)
+
+        //call defined Functions
         initViews()
         setValuesToViews()
 
+        //Set OnClickListner on Update Button
         btnUpdateGoal.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("goalId").toString(),
@@ -35,6 +40,7 @@ class GoalDetailsActivity : AppCompatActivity() {
             )
         }
 
+        //Set OnClickListner on Delete Button
         btnDeleteGoal.setOnClickListener {
             deleteRecord(
                 intent.getStringExtra("goalId").toString()
@@ -42,6 +48,7 @@ class GoalDetailsActivity : AppCompatActivity() {
         }
     }
 
+    // Initialize values
     private fun initViews(){
         //goalId = findViewById(R.id.goalId)
         goalName = findViewById(R.id.goalName)
@@ -50,6 +57,8 @@ class GoalDetailsActivity : AppCompatActivity() {
         btnDeleteGoal = findViewById(R.id.btnDeleteGoal)
     }
 
+
+    //Set value to views, From the extra values in the intent
     private fun setValuesToViews(){
 
         //goalId.text = intent.getStringExtra("goalId")
@@ -57,6 +66,7 @@ class GoalDetailsActivity : AppCompatActivity() {
         goalDescription.text = intent.getStringExtra("goalDescription")
     }
 
+    //Update Dialog for update details
     private fun openUpdateDialog(goalId: String, goalName:String, goalDescription:String){
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -64,17 +74,20 @@ class GoalDetailsActivity : AppCompatActivity() {
 
         mDialog.setView(mDialogView)
 
+        // Initialize Dialog views
          val goalName = mDialogView.findViewById<EditText>(R.id.edGoalName)
          val goalDescription = mDialogView.findViewById<EditText>(R.id.edGoalDescription)
          val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
+        //Set values to update dialog
         goalName.setText( intent.getStringExtra("goalName").toString())
         goalDescription.setText( intent.getStringExtra("goalDescription").toString())
 
-        mDialog.setTitle("Updating $goalName Record")
+        mDialog.setTitle("Updating Record")
         var alertDialog = mDialog.create()
         alertDialog.show()
 
+        //onClickListner to update Data Button
         btnUpdateData.setOnClickListener {
             updateGoalData(
                 goalId,
@@ -92,8 +105,11 @@ class GoalDetailsActivity : AppCompatActivity() {
             alertDialog.dismiss()
             onBackPressed()
         }
+
     }
 
+
+    //Update Data Function
     private fun updateGoalData(
         id:String,
         name:String,
@@ -105,6 +121,7 @@ class GoalDetailsActivity : AppCompatActivity() {
         dbRef.setValue(goalInfo)
     }
 
+    //Delete Function
     private fun deleteRecord(id:String){
         val dbRef = FirebaseDatabase.getInstance().getReference("Goals").child(id)
         val mTask = dbRef.removeValue()

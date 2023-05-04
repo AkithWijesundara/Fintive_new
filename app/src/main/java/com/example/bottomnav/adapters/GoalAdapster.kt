@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnav.R
 import com.example.bottomnav.modelClasses.goalModel
 
+//Adapter for Get Goals List
 class GoalAdapster(private val goalList: ArrayList<goalModel>): RecyclerView.Adapter<GoalAdapster.ViewHolder>() {
 
 

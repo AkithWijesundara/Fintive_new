@@ -49,6 +49,7 @@ class AddGoal : AppCompatActivity() {
         }
     }
 
+    //Create Goal Function
     private fun saveGoalData(){
 
         //getting values
