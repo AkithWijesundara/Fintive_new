@@ -10,5 +10,6 @@ data class IncomeModel (
     var incFrequancy:String?=null,
     var incReccuring:String?=null,
     var incNonReccuring:String?=null,
+    var incIsEarned:Boolean?=false
 )
 

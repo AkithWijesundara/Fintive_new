@@ -22,6 +22,7 @@ class Income_View : AppCompatActivity() {
     private lateinit var incFrequancyValue:TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
+    private lateinit var btnEarned:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +44,17 @@ class Income_View : AppCompatActivity() {
                 intent.getStringExtra("incId").toString()
             )
         }
+        //Btn listener to earned
+        btnEarned.setOnClickListener {
+            setEarned(
+                intent.getStringExtra("incId").toString(),
+                intent.getStringExtra("incName").toString(),
+                intent.getStringExtra("incAmount").toString(),
+                intent.getStringExtra("incDate").toString(),
+                intent.getStringExtra("incRecurr").toString(),
+                intent.getStringExtra("incFrequancy").toString()
+            )
+        }
     }
 
     private fun initView(){
@@ -53,6 +65,7 @@ class Income_View : AppCompatActivity() {
         incFrequancyValue = findViewById(R.id.incFrequancyValue)
         btnUpdate=findViewById(R.id.update)
         btnDelete=findViewById(R.id.delete)
+        btnEarned=findViewById(R.id.earned)
 
     }
 
@@ -152,6 +165,26 @@ class Income_View : AppCompatActivity() {
 //            startActivity(intent)
         }.addOnFailureListener { err->
             Toast.makeText(this,"Delete Unsuccessfull $err",Toast.LENGTH_LONG).show()
+        }
+    }
+
+    //function to set earned income
+    private fun setEarned(
+        incId: String,
+        incName:String,
+        incAmount: String,
+        incDate: String,
+        incRecurr:String,
+        incFrequancy:String
+    ){
+        val dbRef=FirebaseDatabase.getInstance().getReference("Incomes").child(incId)
+        var num:Double=incAmount.toDouble()
+        val incomeInfo=IncomeModel(incId,incName,num,incDate,incFrequancy,incRecurr, incIsEarned = true)
+        dbRef.setValue(incomeInfo).addOnSuccessListener {
+            Toast.makeText(this,"Income Updated Successfully",Toast.LENGTH_LONG).show()
+            onBackPressed()
+        }.addOnFailureListener {err->
+            Toast.makeText(this,"Update Unsuccessfull $err",Toast.LENGTH_LONG).show()
         }
     }
 

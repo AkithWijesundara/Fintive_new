@@ -29,7 +29,7 @@
             android:id="@+id/incomeForm"
             android:layout_width="385dp"
             android:layout_height="543dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="50dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:cardUseCompatPadding="true"
@@ -164,26 +164,39 @@
             android:layout_width="150dp"
             android:layout_height="48dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="4dp"
             android:backgroundTint="@color/design_default_color_error"
             android:text="@string/delete"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/incomeForm" />
+            app:layout_constraintTop_toBottomOf="@+id/earned" />
 
         <Button
             android:id="@+id/update"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="4dp"
             android:layout_marginRight="24dp"
             android:text="@string/update"
+            android:backgroundTint="@color/colorThird"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.659"
             app:layout_constraintStart_toEndOf="@+id/delete"
+            app:layout_constraintTop_toBottomOf="@+id/earned" />
+
+        <Button
+            android:id="@+id/earned"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/earned"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/incomeForm" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

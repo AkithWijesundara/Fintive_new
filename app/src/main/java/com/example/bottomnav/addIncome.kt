@@ -30,7 +30,7 @@ class addIncome : AppCompatActivity() {
         etIncomeAmount=findViewById(R.id.incAmountValue)
         etIncomeDate=findViewById(R.id.incDateValue)
         etIncomeReccuring=findViewById(R.id.recurring)
-        etIncomeFrequancy=findViewById(R.id.senderSpinner)
+        etIncomeFrequancy=findViewById(R.id.spinner)
         btnSaveData=findViewById(R.id.confirm)
 
         //Initializing
@@ -48,6 +48,7 @@ class addIncome : AppCompatActivity() {
         val incAmount: Double?=amount.toDouble()
         val incDate=etIncomeDate.text.toString()
         val incFrequancy=etIncomeFrequancy.getSelectedItem().toString()
+        val incIsEarned:Boolean=false
         var incReccuring: String? =null
         if(etIncomeReccuring.isChecked()){
             incReccuring="Reccuring"
@@ -71,12 +72,13 @@ class addIncome : AppCompatActivity() {
         val incId=dbRef.push().key!!
 
         //Creatig a variable from Income model class
-        val income=IncomeModel(incId, incName, incAmount, incDate, incFrequancy, incReccuring)
+        val income=IncomeModel(incId, incName, incAmount, incDate, incFrequancy, incReccuring, incIsEarned= false)
 
         //sending to database
         dbRef.child(incId).setValue(income)
             .addOnCompleteListener{
                 Toast.makeText(this,"Data Inserted SuccessFully",Toast.LENGTH_LONG).show()
+                onBackPressed()
             }.addOnFailureListener { err->
                 Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_LONG).show()
             }
