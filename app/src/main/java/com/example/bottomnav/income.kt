@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -74,6 +73,23 @@ class income : Fragment(R.layout.fragment_income) {
                     }
                     adapterInc=incomeAdapter(incomeArrayList)
                     recyclerView.adapter=adapterInc
+
+                    adapterInc.setOnItemClickListner(object : incomeAdapter.onItemClickListner {
+                        override fun onItemClick(prosition: Int) {
+                            val intent=Intent(requireContext(),Income_View::class.java);
+                            val d =incomeArrayList[prosition].incAmount.toString();
+                            //putting extras
+                            intent.putExtra("incId",incomeArrayList[prosition].incId);
+                            intent.putExtra("incName",incomeArrayList[prosition].incName);
+                            intent.putExtra("incAmount",d);
+                            intent.putExtra("incDate",incomeArrayList[prosition].incDate);
+                            intent.putExtra("incRecurr",incomeArrayList[prosition].incReccuring);
+                            intent.putExtra("incFrequancy",incomeArrayList[prosition].incFrequancy);
+
+                            startActivity(intent)
+                        }
+
+                    })
                 }
             }
 
