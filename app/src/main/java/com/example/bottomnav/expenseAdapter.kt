@@ -27,7 +27,7 @@ class expenseAdapter(private val arrayList: ArrayList<expenseData>):RecyclerView
     }
 
     class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val eName:TextView=itemView.findViewById(R.id.retGoalName)
+        val eName:TextView=itemView.findViewById(R.id.incName)
         val date:TextView=itemView.findViewById(R.id.tvdate)
         val cost:TextView=itemView.findViewById(R.id.tvAmount)
     }
