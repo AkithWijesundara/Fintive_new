@@ -9,12 +9,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile page"
-        android:textSize="24dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:text="tharoosha"
+        android:textSize="24dp" />
 
     <Button
-        android:id="@+id/etGoalConfirmBtn"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />
