@@ -2,14 +2,17 @@ package com.example.bottomnav
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import kotlin.math.exp
 
 
 class income : Fragment(R.layout.fragment_income) {
@@ -18,6 +21,9 @@ class income : Fragment(R.layout.fragment_income) {
     private lateinit var recyclerView: RecyclerView
     private lateinit var incomeArrayList: ArrayList<IncomeData>
     private lateinit var dbRef:DatabaseReference
+    private lateinit var incExpected:TextView
+    private lateinit var incCurrent:TextView
+
 
     lateinit var names: Array<String>
     lateinit var dates:Array<String>
@@ -29,7 +35,9 @@ class income : Fragment(R.layout.fragment_income) {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_income, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,10 +47,11 @@ class income : Fragment(R.layout.fragment_income) {
         recyclerView=view.findViewById(R.id.recycle)
         recyclerView.layoutManager=layoutManager
         recyclerView.hasFixedSize()
-
         incomeArrayList = arrayListOf<IncomeData>()
+        initView()
         dataInitialize()
 
+        //setIncome()
 
 
             val addinc=view.findViewById<Button>(R.id.button)
@@ -55,6 +64,27 @@ class income : Fragment(R.layout.fragment_income) {
             }
 
 
+    }
+
+    private fun initView(){
+        incExpected= view!!.findViewById(R.id.tvExpectedExpAmount)
+        incCurrent=view!!.findViewById(R.id.tvCurrExpAmount)
+    }
+
+    private fun setIncome(){
+
+        var expectedTotal:Long=0;
+        var currentTotal:Long=0;
+        for(item in incomeArrayList){
+            expectedTotal += item.incAmount!!.toLong()
+            if(item.incIsEarned==true){
+                currentTotal+=item.incAmount!!.toLong()
+            }
+        }
+        var value:Double=expectedTotal.toDouble()
+        var value2:Double=currentTotal.toDouble()
+        incExpected.text= "Rs.$value"
+        incCurrent.text="Rs.$value2"
     }
 
 
@@ -73,7 +103,7 @@ class income : Fragment(R.layout.fragment_income) {
                     }
                     adapterInc=incomeAdapter(incomeArrayList)
                     recyclerView.adapter=adapterInc
-
+                    setIncome()
                     adapterInc.setOnItemClickListner(object : incomeAdapter.onItemClickListner {
                         override fun onItemClick(prosition: Int) {
                             val intent=Intent(requireContext(),Income_View::class.java);
@@ -85,6 +115,7 @@ class income : Fragment(R.layout.fragment_income) {
                             intent.putExtra("incDate",incomeArrayList[prosition].incDate);
                             intent.putExtra("incRecurr",incomeArrayList[prosition].incReccuring);
                             intent.putExtra("incFrequancy",incomeArrayList[prosition].incFrequancy);
+                            intent.putExtra("incIsEarned",incomeArrayList[prosition].incIsEarned);
 
                             startActivity(intent)
                         }
