@@ -6,7 +6,11 @@
     <string name="incomeName">Name</string>
     <string name="incomeAmount">Amount</string>
     <string name="date">Expected Date</string>
+    <string name="recurring">Recurring</string>
+    <string name="frequency">Frequency</string>
     <string name="clear">CLEAR</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
     <string name="confirm">CONFIRM</string>
     <string name="often">Frequency</string>
     <string-array name="frequency">
@@ -58,6 +62,8 @@
     <string name="enterDesc">Enter Description</string>
     <string name="cancelbtn">Cancel</string>
     <string name="goalName">Goal Name</string>
+    <string name="UPDATE">UPDATE</string>
+    <string name="deleteBtn">DELETE</string>
 
 
     <string name="Acc_heading">ACCOUNTS</string>
