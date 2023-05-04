@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addGoal">
+    tools:context=".AddGoal">
 
     <ImageView
         android:id="@+id/back_btn"
@@ -48,7 +48,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/etGoalName"
             android:layout_width="276dp"
             android:layout_height="56dp"
             android:layout_marginStart="20dp"
@@ -73,10 +73,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/etGoalName" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/etGoalDescription"
             android:layout_width="277dp"
             android:layout_height="51dp"
             android:layout_marginStart="20dp"
@@ -100,13 +100,13 @@
             android:backgroundTint="@color/design_default_color_error"
             android:text="@string/cancelbtn"
             android:textSize="@dimen/btnTextSize"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintEnd_toStartOf="@+id/etGoalConfirmBtn"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/etGoalConfirmBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"

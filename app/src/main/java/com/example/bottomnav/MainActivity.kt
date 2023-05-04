@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> replaceFragment(home())
-                R.id.accounts -> replaceFragment(accounts())
+                R.id.accounts -> replaceFragment(Accounts())
                 R.id.analytics -> replaceFragment(analytics())
                 R.id.profile -> replaceFragment(profile())
                 else -> {

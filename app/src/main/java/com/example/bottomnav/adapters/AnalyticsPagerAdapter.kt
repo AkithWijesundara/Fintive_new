@@ -15,7 +15,7 @@ class AnalyticsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecyc
     override fun createFragment(position: Int): Fragment {
         return when(position){
             0->{
-                hashGoalFragment()
+                HashGoalFragment()
             }
             1->{
                 hashIncomeFragment()
@@ -24,7 +24,7 @@ class AnalyticsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecyc
                 hashExpenseFragment()
             }
             else->{
-                hashGoalFragment()
+                HashGoalFragment()
             }
         }
     }

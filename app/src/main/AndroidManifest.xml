@@ -20,11 +20,35 @@
         <activity
             android:name=".addGoal"
             android:exported="false" />
+      <activity
+            android:name=".GoalDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddGoal"
+            android:exported="false" />
+        <activity
+            android:name=".AddAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccFetch"
+            android:exported="false" />
+        <activity
+            android:name=".Accounts"
+            android:exported="false" />
+        <activity
+            android:name=".AccDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Transfer"
+            android:exported="false" />
         <activity
             android:name=".linechart"
             android:exported="false" />
         <activity
             android:name=".add_expense"
+            android:exported="false" />
+        <activity
+            android:name=".AccountsActivity"
             android:exported="false" />
         <activity
             android:name=".addexpense"
@@ -34,6 +58,22 @@
         <activity
             android:name=".addIncome"
             android:exported="false" />
+        <activity
+            android:name=".AddGoal"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".AddAccountActivity"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".AccDetailsActivity"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".AccFetch"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

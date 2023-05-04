@@ -38,6 +38,7 @@ class incomeAdapter (private val arrayList: ArrayList<IncomeData>): RecyclerView
         return arrayList.size
     }
 
+
     class MyViewHolder(itemView: View, clickListner: onItemClickListner): RecyclerView.ViewHolder(itemView){
         val eName: TextView =itemView.findViewById(R.id.expName)
         val date: TextView =itemView.findViewById(R.id.tvdate)
