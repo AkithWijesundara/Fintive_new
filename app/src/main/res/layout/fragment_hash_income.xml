@@ -28,14 +28,13 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChartGraph2"
-        android:layout_width="411dp"
-        android:layout_height="543dp"
+        android:layout_width="371dp"
+        android:layout_height="488dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.596">
+        app:layout_constraintVertical_bias="0.413">
 
     </com.github.mikephil.charting.charts.PieChart>
 

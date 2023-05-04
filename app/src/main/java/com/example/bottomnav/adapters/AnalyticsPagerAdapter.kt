@@ -6,6 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.bottomnav.*
 
+//Adapter for Tabbed Layout
 class AnalyticsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle)  {
 
     override fun getItemCount(): Int {
@@ -15,7 +16,7 @@ class AnalyticsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecyc
     override fun createFragment(position: Int): Fragment {
         return when(position){
             0->{
-                hashGoalFragment()
+                HashGoalFragment()
             }
             1->{
                 hashIncomeFragment()
@@ -24,7 +25,7 @@ class AnalyticsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecyc
                 hashExpenseFragment()
             }
             else->{
-                hashGoalFragment()
+                HashGoalFragment()
             }
         }
     }
