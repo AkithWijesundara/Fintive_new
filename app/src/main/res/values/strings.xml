@@ -80,8 +80,9 @@
     <string name="transfer_heading">TRANSFER</string>
     <string name="transfer_field1">Amount</string>
     <string name="transfer_field2">✎ Note</string>
-    <string name="transfer_field3">Cash</string>
-    <string name="transfer_field4">Card</string>
+    <string name="transfer_field3">FROM</string>
+    <string name="transfer_field4">TO</string>
     <string name="transfer_btn">《 》 TRANSFER</string>
+    <string name="currency_format">Rs.%.2f</string>
 
 </resources>
