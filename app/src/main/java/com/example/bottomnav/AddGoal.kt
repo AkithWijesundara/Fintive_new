@@ -3,10 +3,7 @@ package com.example.bottomnav
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import com.example.bottomnav.modelClasses.goalModel
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
@@ -58,6 +55,19 @@ class AddGoal : AppCompatActivity() {
         val goalId = dbRef.push().key!!
 
         val goal = goalModel(goalId, goalName, goalDescripion)
+
+        //validations
+        if(goalName.isEmpty()){
+            etGoalName.error = "Fill this Field"
+            etGoalName.requestFocus()
+            return
+        }
+
+        if(goalDescripion.isEmpty()){
+            etGoalDescription.error = "Fill this Field"
+            etGoalDescription.requestFocus()
+            return
+        }
 
         dbRef.child(goalId).setValue(goal)
             .addOnCompleteListener{
