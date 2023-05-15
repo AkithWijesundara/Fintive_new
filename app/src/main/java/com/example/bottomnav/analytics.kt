@@ -29,7 +29,7 @@ class analytics : Fragment() {
         val expenseButton = view.findViewById<Button>(R.id.btn_expences)
 
         val fragmentExpense = hashExpenseFragment()
-        val fragmentIncome = hashIncomeFragment()
+        val fragmentIncome = hashIncomeFragment.kt()
         val fragmentGoals = hashGoalFragment()
 
         expenseButton.setOnClickListener{

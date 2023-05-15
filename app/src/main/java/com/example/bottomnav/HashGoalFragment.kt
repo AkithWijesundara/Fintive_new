@@ -39,6 +39,12 @@ class HashGoalFragment : Fragment() {
             requireContext().startActivity(intent)
         }
 
+        var calculator = ret.findViewById<Button>(R.id.calBtn)
+        calculator.setOnClickListener {
+            val intent = Intent(context, HashCalculator::class.java)
+            requireContext().startActivity(intent)
+        }
+
 
         goalRecyclerView = ret.findViewById<RecyclerView>(R.id.goalRecyclerView)
         goalRecyclerView.layoutManager = LinearLayoutManager(requireContext())
