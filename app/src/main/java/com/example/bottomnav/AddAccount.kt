@@ -1,6 +1,4 @@
 package com.example.bottomnav
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -23,11 +21,10 @@ class AddAccountActivity : AppCompatActivity() {
         setContentView(R.layout.fragment_account__a_d_d)
 
         // Get ID of back button
-        val returnButton = findViewById<ImageView>(R.id.imageButton3)
+        val returnButton = findViewById<ImageView>(R.id.imageButton77)
         // Back to Accounts Fragment
         returnButton.setOnClickListener {
-            val intent = Intent(this,Accounts::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
         // Assign IDs and initialize values
@@ -54,30 +51,76 @@ class AddAccountActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkAccountNameExists(accountName: String, callback: (Boolean) -> Unit) {
+        dbRef.orderByChild("accountName").equalTo(accountName)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    callback(snapshot.exists())
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    callback(false)
+                }
+            })
+    }
+
+
     private fun saveAccountData() {
         // Getting values
-        val accountName = etAccountName.text.toString()
-        val initialBalance = etInitialBalance.text.toString().toDouble()
-        val initialBalanceDate = etInitialBalanceDate.text.toString()
+        val accountName = etAccountName.text.toString().trim()
+        val initialBalance = etInitialBalance.text.toString().trim()
+        val initialBalanceDate = etInitialBalanceDate.text.toString().trim()
         val accountType = spinnerAccountType.selectedItem.toString()
 
-        // Creating new account object
-        val accountId = dbRef.push().key!!
-        val account = AccountModel(accountId, accountName, initialBalance, initialBalanceDate, accountType)
+        // Validating input fields
+        if (accountName.isEmpty()) {
+            etAccountName.error = "Please enter account name"
+            etAccountName.requestFocus()
+            return
+        }
 
-        // Saving account to database
-        dbRef.child(accountId).setValue(account)
-            .addOnCompleteListener {
-                Toast.makeText(this, "Account added", Toast.LENGTH_LONG).show()
+        if (initialBalance.isEmpty()) {
+            etInitialBalance.error = "Please enter initial balance"
+            etInitialBalance.requestFocus()
+            return
+        }
 
-                // Clearing form fields
-                etAccountName.text.clear()
-                etInitialBalance.text.clear()
-                etInitialBalanceDate.text.clear()
-                spinnerAccountType.setSelection(0)
-            }.addOnFailureListener { err ->
-                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+        if (initialBalance.toDoubleOrNull() == null) {
+            etInitialBalance.error = "Please enter a valid balance amount"
+            etInitialBalance.requestFocus()
+            return
+        }
+
+        if (initialBalanceDate.isEmpty()) {
+            etInitialBalanceDate.error = "Please enter initial balance date"
+            etInitialBalanceDate.requestFocus()
+            return
+        }
+
+        // Check if account name already exists
+        checkAccountNameExists(accountName) { exists ->
+            if (exists) {
+                Toast.makeText(this, "Account name already exists", Toast.LENGTH_LONG).show()
+            } else {
+                // Creating new account object
+                val accountId = dbRef.push().key!!
+                val account = AccountModel(accountId, accountName, initialBalance.toDouble(), initialBalanceDate, accountType)
+
+                // Saving account to database
+                dbRef.child(accountId).setValue(account)
+                    .addOnCompleteListener {
+                        Toast.makeText(this, "Account added", Toast.LENGTH_LONG).show()
+
+                        // Clearing form fields
+                        etAccountName.text.clear()
+                        etInitialBalance.text.clear()
+                        etInitialBalanceDate.text.clear()
+                        spinnerAccountType.setSelection(0)
+                    }.addOnFailureListener { err ->
+                        Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+                    }
             }
+        }
     }
 }
 
