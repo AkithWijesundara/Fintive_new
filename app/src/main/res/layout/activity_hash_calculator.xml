@@ -35,6 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonAdd"
+        android:layout_marginTop="-48dp"
+        android:layout_marginStart="90dp"
         android:text="Subtract" />
 
     <Button
@@ -42,6 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonSubtract"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="-48dp"
         android:text="Multiply" />
 
     <Button
@@ -49,6 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonMultiply"
+        android:layout_marginTop="-48dp"
+        android:layout_marginStart="315dp"
         android:text="Divide" />
 
     <TextView
@@ -56,7 +62,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonDivide"
-        android:layout_margin="16dp"
-        android:textSize="24sp" />
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="200dp"
+        android:textSize="50sp" />
 
 </RelativeLayout>
