@@ -33,6 +33,15 @@ class Transfer : AppCompatActivity() {
         senderSpinner = findViewById(R.id.senderSpinner)
         receiverSpinner = findViewById(R.id.receiverSpinner)
 
+        //Get Id of back button
+        var returnBtn = findViewById<ImageButton>(R.id.imageButton77)
+
+        //Back to Accounts Fragment
+        returnBtn.setOnClickListener {
+            onBackPressed()
+        }
+
+
         dbref = FirebaseDatabase.getInstance().reference.child("Accounts")
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
