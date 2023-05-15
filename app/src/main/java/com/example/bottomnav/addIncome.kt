@@ -60,12 +60,18 @@ class addIncome : AppCompatActivity() {
         //validating
         if(incName.isEmpty()){
             etIncomeName.error="Plese Enter Income Name"
+            etIncomeName.requestFocus()
+            return
         }
         if(incAmount==null){
             etIncomeAmount.error="Plese Enter Income Amount"
+            etIncomeAmount.requestFocus()
+            return
         }
         if(incDate.isEmpty()){
             etIncomeDate.error="Plese Enter Income Date"
+            etIncomeDate.requestFocus()
+            return
         }
 
         //creating a uneque id for income

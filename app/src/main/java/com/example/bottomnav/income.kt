@@ -71,7 +71,7 @@ class income : Fragment(R.layout.fragment_income) {
         incCurrent=view!!.findViewById(R.id.tvCurrExpAmount)
     }
 
-    private fun setIncome(){
+    public fun setIncome(incomeArrayList:ArrayList<IncomeData>){
 
         var expectedTotal:Long=0;
         var currentTotal:Long=0;
@@ -103,7 +103,7 @@ class income : Fragment(R.layout.fragment_income) {
                     }
                     adapterInc=incomeAdapter(incomeArrayList)
                     recyclerView.adapter=adapterInc
-                    setIncome()
+                    setIncome(incomeArrayList)
                     adapterInc.setOnItemClickListner(object : incomeAdapter.onItemClickListner {
                         override fun onItemClick(prosition: Int) {
                             val intent=Intent(requireContext(),Income_View::class.java);
