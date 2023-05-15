@@ -8,26 +8,26 @@
 
     <EditText
         android:id="@+id/edGoalName"
-        android:layout_width="390dp"
-        android:layout_height="74dp"
+        android:layout_width="305dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Goal Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edGoalDescription"
-        android:layout_width="390dp"
-        android:layout_height="54dp"
+        android:layout_width="306dp"
+        android:layout_height="66dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Goal Description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edGoalName" />
 

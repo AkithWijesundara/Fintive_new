@@ -90,5 +90,6 @@
     <string name="transfer_field4">TO</string>
     <string name="transfer_btn">《 》 TRANSFER</string>
     <string name="currency_format">Rs.%.2f</string>
+    <string name="Calbtn">Calculator</string>
 
 </resources>
